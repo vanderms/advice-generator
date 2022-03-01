@@ -24,7 +24,7 @@
   padding: rem(48) rem(48) rem(72) rem(48);
   position: relative;
 
-  @include media(tablet){
+  @include media(mobile){
     width: 91.47vw;
     padding: rem(40) rem(24) rem(64) rem(24);    
   }
