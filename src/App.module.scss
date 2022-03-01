@@ -59,7 +59,7 @@
   margin-top: rem(40);
   display: flex;
   flex-direction: column;
-  justify-content: start; 
+  justify-content: flex-start; 
   @include media(mobile){
     margin-top: rem(24);
     max-width: 78.67vw;
