@@ -5,21 +5,77 @@
   justify-content: center;
   align-items: center;
   height: Max(100vh, rem(810));
+
+  @include media(mobile){
+    align-items: flex-start;
+    padding-top: rem(120);
+  }
 }
 
 .adviceCard{
-  width: rem(540);
-  height: rem(364);  
-}
-
-.cardContainer{
-  width: 100%;
-  height: rem(332);
+  width: rem(540);  
   background-color: $dark-grayish-blue;
   box-shadow: 30px 50px 80px rgba(0, 0, 0, 0.100202);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: rem(48) rem(48) rem(72) rem(48);
+  position: relative;
+
+  @include media(tablet){
+    width: 91.47vw;
+    padding: rem(40) rem(24) rem(64) rem(24);    
+  }
+    
 }
 
+.adviceTitle{
+  font-size: rem(13);
+  line-height: 1.385;
+  color: $neon-green;
+  letter-spacing: 4.08571px;
+  text-align: center; 
+
+  @include media(mobile){
+    font-size: rem(11);
+  }
+}
+
+.advice{
+  font-size: rem(28);
+  line-height: 1.357;
+  color: $light-cyan;
+  text-align: center;
+  letter-spacing: -0.3px;
+  margin-top: rem(24);
+
+  @include media(mobile){
+    font-size: rem(24);
+  }
+}
+
+.sep{
+  margin-top: rem(40);
+  display: flex;
+  flex-direction: column;
+  justify-content: start; 
+  @include media(mobile){
+    margin-top: rem(24);
+    max-width: 78.67vw;
+    overflow: hidden;
+  }
+}
+
+.button{  
+  position: absolute;
+  @include size(rem(64), rem(64));
+  background-color: $neon-green;
+  bottom: rem(-32);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;  
+}
