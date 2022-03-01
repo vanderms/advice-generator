@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   height: Max(100vh, rem(810));
+  padding-top: rem(16);
 
   @include media(mobile){
     align-items: flex-start;
@@ -78,4 +79,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;  
+}
+
+.button:hover{
+  box-shadow: 0px 0px 40px #53FFAA;
 }
