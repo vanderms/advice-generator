@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const DEFAULT_ADVICE = {
   id: 117,
-  advice: "\"It is easy to sit up and take notice, what's difficult is getting up and taking action.\""
+  advice: "It is easy to sit up and take notice, what's difficult is getting up and taking action."
 }
 type Advice = typeof DEFAULT_ADVICE;
 
@@ -38,7 +38,7 @@ function App() {
     <main className={classes.app}>
       <article className={classes.adviceCard}>      
           <h1 className={classes.adviceTitle}>ADVICE #{advice.id}</h1>
-          <p className={classes.advice}>{advice.advice}</p>
+          <p className={classes.advice}>"{advice.advice}"</p>
           <picture className={classes.sep}>
             <source srcSet={PatternMobile} media="(max-width: 600px)"/>
             <img src={PatternDesktop} alt=""/>
