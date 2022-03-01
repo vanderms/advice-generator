@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@function rem($px) {
+  $html-font-size: 16;
+  @return #{math.div($px, $html-font-size)}rem;
+}
+
+$breakpoints: (
+  small-mobile: rem(350),
+  mobile: rem(720),
+  tablet: rem(1200),
+  laptop: rem(1440),
+);
+
+@mixin media($size) {
+  $breakpoint: map.get($breakpoints, $size);
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-only-tablet() {
+  $md: map.get($breakpoints, mobile);
+  $lg: map.get($breakpoints, tablet);
+  @media screen and (min-width: calc($md + 1px)) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+
+$light-cyan: hsl(193, 38%, 86%);
+$neon-green: hsl(150, 100%, 66%);
+$grayish-blue: hsl(217, 19%, 38%);
+$dark-grayish-blue: hsl(217, 19%, 24%);
+$dark-blue: hsl(218, 23%, 16%);
