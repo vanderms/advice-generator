@@ -6,10 +6,27 @@
   align-items: center;
   height: Max(100vh, rem(810)); 
 
+  &.loading{
+    &::before {
+      content: '';
+      @include size(rem(48), rem(48));
+      background-image: url(/assets/spinner.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: spin 2s linear infinite;
+    }
+  }
+
   @include media(mobile){
     align-items: flex-start;
     padding-top: rem(120);
   }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .adviceCard{
@@ -23,6 +40,10 @@
   align-items: center;
   padding: rem(48) rem(48) rem(72) rem(48);
   position: relative;
+
+  &.loading {
+    display: none;
+  }
 
   @include media(mobile){
     width: 91.47vw;
